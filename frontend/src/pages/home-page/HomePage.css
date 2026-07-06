@@ -1,0 +1,226 @@
+.homepage-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url('/background.png');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 100% auto;
+  position: relative;
+  overflow: hidden; 
+}
+
+
+.ambient-orb {
+  position: absolute;
+  width: 50rem;
+  height: 50rem;
+  border-radius: 50%;
+  filter: blur(130px);
+  opacity: 0.18;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.orb-top-left-home {
+  top: -15%;
+  left: -10%;
+  background: radial-gradient(circle, #818cf8 0%, rgba(99, 102, 241, 0) 70%);
+  animation: floatOrb 18s infinite ease-in-out alternate;
+}
+
+.orb-bottom-right-home {
+  bottom: -15%;
+  right: -5%;
+  background: radial-gradient(circle, #c084fc 0%, rgba(192, 132, 252, 0) 70%);
+  animation: floatOrb 22s infinite ease-in-out alternate-reverse;
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 90%;
+  max-width: 100rem;
+  margin: 3.5rem auto 0;
+  min-height: 60vh;
+}
+
+.hero-title {
+  font-size: 5.15rem;
+  font-weight: 800;
+  color: #0b0f19;
+  line-height: 1.15;
+  letter-spacing: -0.08rem;
+  text-align: center;
+  margin: 0;
+  animation: fadeInUpHero 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.highlight-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 50%, #3b82f6 100%);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sketch-underline {
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  width: 100%;
+  height: 1.5rem;
+  color: #6366f1;
+  pointer-events: none;
+}
+
+
+.sketch-underline path {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: drawLine 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: 0.6s;
+}
+
+.hero-description {
+  font-size: 1.65rem;
+  line-height: 1.6;
+  color: #475569;
+  max-width: 45rem;
+  margin: 3rem auto 2.5rem;
+  text-align: center;
+  animation: fadeInUpHero 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.15s;
+}
+
+.hero-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: .75rem;
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: #ffffff;
+  padding: 1.45rem 2.5rem 1.45rem 1.95rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  transition: all 0.2s ease;
+  animation: fadeInUpHero 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.3s;
+}
+
+.hero-btn-text {
+  font-size: 1.65rem;
+  font-weight: 600;
+}
+
+.hero-btn .sparkle-svg {
+  width: 2.5rem;
+  animation: sparklePulse 2.5s infinite ease-in-out;
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+}
+
+.hero-btn:active {
+  transform: translateY(0) scale(1);
+}
+
+
+@keyframes fadeInUpHero {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes floatOrb {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(30px, -45px) scale(1.08);
+  }
+  100% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+}
+
+@keyframes sparklePulse {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0));
+  }
+  50% {
+    transform: scale(1.15) rotate(12deg);
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.7));
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-section {
+    margin: 4rem auto;
+  }
+
+  .hero-title {
+    font-size: 4.8rem;
+    letter-spacing: -0.1rem;
+  }
+
+  .hero-description {
+    max-width: 50rem;
+    font-size: 1.7rem;
+    margin: 3rem auto 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-section {
+    margin: 4.5rem auto;
+    width: 95%;
+    min-height: 42.5vh;
+  }
+
+  .hero-title {
+    font-size: 3.6rem;
+    letter-spacing: -0.06rem;
+  }
+
+  .hero-description {
+    font-size: 1.5rem;
+    max-width: 85%;
+    margin: 3rem auto 2.5rem;
+  }
+
+  .hero-btn {
+    padding: 1.2rem 2rem;
+  }
+
+  .hero-btn-text {
+    font-size: 1.5rem;
+  }
+
+  .hero-btn .sparkle-svg {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+}

@@ -1,0 +1,241 @@
+.setup-card-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 6rem;
+  padding: 4rem 2rem 2rem;
+  position: relative;
+  overflow: hidden; 
+}
+
+.ambient-orb {
+  position: absolute;
+  width: 40rem;
+  height: 40rem;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.15;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.orb-top-left-config {
+  top: -10%;
+  left: -15%;
+  background: radial-gradient(circle, #818cf8 0%, rgba(99, 102, 241, 0) 70%);
+  animation: floatOrbConfig 20s infinite ease-in-out alternate;
+}
+
+.orb-bottom-right-config {
+  bottom: -10%;
+  right: -10%;
+  background: radial-gradient(circle, #c084fc 0%, rgba(192, 132, 252, 0) 70%);
+  animation: floatOrbConfig 24s infinite ease-in-out alternate-reverse;
+}
+
+.sidebar-stepper {
+  width: 32rem;
+  flex-shrink: 0;
+  animation: fadeInUpConfig 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.setup-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 
+    0 10px 40px -10px rgba(79, 70, 229, 0.04), 
+    0 1px 3px rgba(0, 0, 0, 0.01);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 45rem;
+  padding: 2.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  animation: fadeInUpConfig 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.15s; 
+}
+
+@keyframes fadeInUpConfig {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatOrbConfig {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(25px, -35px) scale(1.06);
+  }
+  100% {
+    transform: translate(-15px, 15px) scale(0.96);
+  }
+}
+
+.setup-header-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2.25rem;
+  width: 100%;
+}
+
+.setup-header-wrapper.compact {
+  margin-bottom: 1.2rem;
+}
+
+.setup-icon-circle {
+  width: 4.4rem;
+  height: 4.4rem;
+  background-color: #f5f3ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.setup-title-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #4f46e5;
+}
+
+.setup-title-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+}
+
+.setup-title {
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.01em;
+  text-align: left;
+}
+
+.setup-subtitle {
+  font-size: 1.25rem;
+  color: #64748b;
+  margin: 0;
+  font-weight: 400;
+  text-align: left;
+}
+
+.card-actions {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  gap: 1.5rem;
+}
+
+.back-btn, .next-btn {
+  flex: 1;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1.1rem 2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.back-btn {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+}
+
+.back-btn:hover:not(:disabled) {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+  color: #0f172a;
+}
+
+.next-btn {
+  background-color: #4f46e5;
+  border: 1px solid #4f46e5;
+  color: #ffffff;
+}
+
+.next-btn:hover:not(:disabled) {
+  background-color: #4338ca;
+  border-color: #4338ca;
+}
+
+.back-btn:disabled {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+  color: #cbd5e1;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.next-btn:disabled {
+  background-color: #cbd5e1;
+  border-color: #cbd5e1;
+  color: #94a3b8;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.card-actions.vertical {
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.card-actions.vertical .back-btn,
+.card-actions.vertical .next-btn {
+  width: 100%;
+  flex: none;
+}
+
+.spinner-icon {
+  width: 1.8rem;
+  height: 1.8rem;
+  animation: rotate 1.2s linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 950px) {
+  .setup-card-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 3.5rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .sidebar-stepper {
+    width: 100%;
+    max-width: 60rem; 
+  }
+
+  .step-header {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .setup-card {
+    padding: 2.5rem;
+    border-radius: 16px;
+  }
+}
