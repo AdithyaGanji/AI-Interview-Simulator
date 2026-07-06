@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-  baseURL: import.meta.env.DEV ? "http://localhost:8080/" : "/"
+  baseURL: import.meta.env.DEV ? "http://localhost:8080/" : "https://ai-interview-simulator-backend-y4pa.onrender.com/"
 });
