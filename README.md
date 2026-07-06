@@ -22,3 +22,6 @@ AI Interview Simulator is a full-stack web application designed to help users pr
 ### Performance Report
 - Receive an overall performance rating (0–100) with personalized feedback, highlighting key strengths and areas for improvement.
 - Navigate through individual questions to review personalized critiques, scores (1–10), and AI-generated model answers.
+
+## Live Demo
+[Visit AI Interview Simulator Here!](https://prepup-ai.vercel.app/)
