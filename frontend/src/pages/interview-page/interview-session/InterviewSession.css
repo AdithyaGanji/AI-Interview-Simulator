@@ -111,7 +111,7 @@
 .answer-textarea {
   width: 100%;
   padding: 1.8rem 2rem 3rem 2rem;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 400;
   color: #334155;
   background-color: #ffffff;
@@ -215,12 +215,12 @@
   }
 
   .session-question-type {
-    font-size: 1.15rem;
+    font-size: 1.175rem;
     margin-bottom: -0.4rem;
   }
 
   .session-question-text {
-    font-size: 1.45rem;
+    font-size: 1.5rem;
   }
 
   .session-footer {
