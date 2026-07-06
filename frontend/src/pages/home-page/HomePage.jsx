@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Navbar from '../../components/navbar/Navbar';
 import './HomePage.css';
 
@@ -26,7 +27,7 @@ function HomePage() {
           <p className="hero-description">
             Upload your resume, choose your role, and let AI generate a personalized mock interview with instant feedback.
           </p>
-          <a href='/interview'>
+          <Link to='/interview'>
             <button className="hero-btn">
               <svg viewBox="0 0 24 24" fill="currentColor" className="sparkle-svg">
                 <path d="M12 4C12 8.4 15.6 12 20 12C15.6 12 12 15.6 12 20C12 15.6 8.4 12 4 12C8.4 12 12 8.4 12 4Z" />
@@ -35,7 +36,7 @@ function HomePage() {
               </svg>
               <span className="hero-btn-text">Start Interview</span>
             </button>
-          </a>
+          </Link>
         </main>
       </div>
     </div>
