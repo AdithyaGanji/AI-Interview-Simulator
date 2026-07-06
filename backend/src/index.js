@@ -13,7 +13,10 @@ const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 app.use(express.json());
 app.use(cors({
-	origin: "http://localhost:5173"
+	origin: [
+		"http://localhost:5173",
+		"https://prepup-ai.vercel.app"
+	]
 }));
 app.use(fileUpload());
 
