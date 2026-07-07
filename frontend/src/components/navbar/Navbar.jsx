@@ -13,7 +13,7 @@ function Navbar() {
           </svg>
         </div>
         <span className="navbar-title">
-          AI Interview <span className="title-highlight">Simulator</span>
+          Prepup <span className="title-highlight">AI</span>
         </span>
       </Link>
       <div className="navbar-links">

@@ -1,6 +1,6 @@
-# AI Interview Simulator
+# Prepup AI
 
-AI Interview Simulator is a full-stack web application designed to help users prepare for technical job interviews through personalized mock interview sessions. It analyzes uploaded resumes, generates diverse interview questions tailored to the user's background, and provides AI-powered feedback to help users identify strengths and improve their interview performance.
+Prepup AI is a full-stack web application designed to help users prepare for technical job interviews through personalized mock interview sessions. It analyzes uploaded resumes, generates diverse interview questions tailored to the user's background, and provides AI-powered feedback to help users identify strengths and improve their interview performance.
 
 ## Technology Stack
 
@@ -24,4 +24,4 @@ AI Interview Simulator is a full-stack web application designed to help users pr
 - Navigate through individual questions to review personalized critiques, scores (1–10), and AI-generated model answers.
 
 ## Live Demo
-[Visit AI Interview Simulator Here!](https://prepup-ai.vercel.app/)
+[Visit Prepup AI Here!](https://prepup-ai.vercel.app/)
