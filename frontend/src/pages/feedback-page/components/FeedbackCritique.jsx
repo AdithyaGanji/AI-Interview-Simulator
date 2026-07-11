@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom';
-import { useConfigStore } from '../../../store/useConfigStore';
 import { useSessionStore } from '../../../store/useSessionStore';
 
 function FeedbackCritique({ 
@@ -74,20 +73,9 @@ function FeedbackCritique({
           className="restart-btn" 
           type="button"
           onClick={() => {
-            useConfigStore.setState({
-              step: 1,
-              selectedFile: null,
-              selectedRole: "",
-              selectedExperience: "",
-              questionCount: 5
-            });
             useSessionStore.setState({
-              questions: [],
-              answers: [],
-              questionNum: 1,
               feedback: {},
-              interviewCompleted: false,
-              isLoading: false
+              interviewCompleted: false
             });
             navigate("/");
           }}

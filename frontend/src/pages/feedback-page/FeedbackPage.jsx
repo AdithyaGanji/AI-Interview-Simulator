@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useConfigStore } from '../../store/useConfigStore';
 import { useSessionStore } from '../../store/useSessionStore';
 import Navbar from '../../components/navbar/Navbar';
 import FeedbackSidebar from './components/FeedbackSidebar';
@@ -37,6 +38,22 @@ function FeedbackPage() {
       window.removeEventListener("keydown", handleKeyPress);
     };
   }, [feedbacks.length]);
+
+  useEffect(() => {
+    useConfigStore.setState({
+      step: 1,
+      selectedFile: null,
+      selectedRole: "",
+      selectedExperience: "",
+      questionCount: 10
+    })
+    useSessionStore.setState({
+      questions: [],
+      answers: [],
+      questionNum: 1,
+      isLoading: false
+    })
+  }, []);
 
   return (
     interviewCompleted && (
